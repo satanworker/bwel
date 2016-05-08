@@ -1,0 +1,32 @@
+<!-- Форма авторизации --> 
+<ion-view view-catch="false" flex>
+
+  <ion-content class="auth row">
+    <div class="col baner text-center">
+        <img src="/img/logo.png" alt="BWell">
+    </div>
+    <form name="authLoginForm" class="auth__login_form" ng-submit="authLoginCtr.login($scope.user);" novalidate>
+
+      <h4 class="title" translate=""></h4>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label" translate="PhoneNumber">PhoneNumber </span>
+          <input name="username" type="text" ng-model="authLoginCtr.credantionals.PhoneNumber" ng-class="{ 'has-error' : authLoginForm.username.$invalid}" ng-placeholder="{{PhoneNumber | translate}}">
+        </label>
+        <label class="item item-input">
+          <span class="input-label" translate="NationalId">NationalId</span>
+          <input name="NationalId" type="text" ng-model="authLoginCtr.credantionals.NationalId" ng-minlength="5" ng-maxlength="10" ng-class="{ 'has-error' : authLoginForm.NationalId.$invalid}">
+        </label>
+      </div>
+
+      <div class="padding">
+        <button class="button button-block button-positive" ng-disabled="authLoginForm.$invalid" ng-click="authLoginCtr.signIn(authLoginCtr.credantionals)" translate="Sign-In">
+          Sign-In
+        </button>
+        <!--    <p class="text-center">
+        <a href="#/forgot-password">Forgot password</a>
+      </p> -->
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

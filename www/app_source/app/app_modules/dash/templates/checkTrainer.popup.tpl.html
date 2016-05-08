@@ -1,0 +1,11 @@
+<button class="popup-close" ng-click="onCloseVerificationPopup()"></button>
+<p class="popup-title text-right">{{ 'ENTER_ID' | translate }}</p>
+<p class="popup-subtitle text-right">{{ 'CONFIRM_TRAINING' | translate }}</p>
+<label class="label text-right">{{ 'CODE' | translate }}:</label>
+<input class="form-control" ng-model="model.code" type="text">
+<div class="text-left" style="float:left">
+    <button ng-click="onStartTraining($event, model.code)" class="button button-small button-positive">{{ 'ENTER' | translate }}</button>
+</div>
+<div class="text-right">
+    <button ng-click="onCloseVerificationPopup()" class="button button-small button-assertive">{{ 'CANCEL' | translate }}</button>
+</div>

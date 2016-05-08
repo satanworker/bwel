@@ -1,0 +1,32 @@
+<ion-view cache-view="false" class="trainer__dashboard">
+  <div class="bar bar-positive bar-subheader">
+    <h1 class="title">Hello {{vm.user.name}}</h1>
+  </div>
+  <ion-content class="has-subheader">
+    <!-- Center content -->
+    <ion-nav-view animation="slide-left-right" class="col">
+      <!--   <div class="col padding text-center">
+        <img src="img/logo.png" alt="BWell">
+      </div> -->
+
+      <trainer-panel-start-buttons ng-if="!vm.isActiveTraining()" class="text-center">
+        <!--  NOTE: панель запуска составления отчета от тренировке-->
+      </trainer-panel-start-buttons>
+      <div class="col text-center" ng-if="vm.isActiveTraining()">
+        <p class="trainer-time">{{vm.timer.diffTimer().minutes}}: {{vm.timer.diffTimer().seconds}}</p>
+      </div>
+
+      <trainer-panel-dop-commands class="row">
+        <!-- NOTE: панель кнопок запуска дополнительных функций-->
+      </trainer-panel-dop-commands>
+
+    </ion-nav-view>
+
+  </ion-content>
+<!--   <div class="bar bar-footer">
+    <trainer-panel-dop-commands>
+       NOTE: панель кнопок запуска дополнительных функций
+    </trainer-panel-dop-commands>
+
+  </div> -->
+</ion-view>

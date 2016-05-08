@@ -1,0 +1,7 @@
+<button class="popup-close" ng-click="onCloseGroupList()"> </button>
+<p class="popup-title">{{ 'SELECT_GROUP' | translate }}</p>
+<div ng-click="" class="list blue-list text-center">
+    <a class="item" ng-repeat="group in groupList track by $index" ng-href="#" ng-click="onSelectGroup(group)" >
+      {{ group.Name }}
+    </a>
+</div>

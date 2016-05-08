@@ -1,0 +1,45 @@
+<ion-view cache-view="false">
+  <div>
+    <ion-nav-bar class="bar" align-title="center">
+      <!-- Выбери тренируемого из списка -->
+      <ion-nav-title>
+        <!-- בחר מתאמן לאימון אישי -->Extended training</ion-nav-title>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon ion-person-add"></button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon ion-close-round" ui-sref="^"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-content class="trainees-dashboard">
+      <div class="row table header">
+
+        <div class="col">Additional info
+          <!-- מידע נוסף -->
+        </div>
+
+        <div class="col"> Name
+          <!-- שם מתאמן -->
+        </div>
+        <div class="col">
+
+        </div>
+      </div>
+      <div class="row table" ng-repeat="data in [1,2,3,4,5]">
+        <div class="col">
+          <button class="button" ng-click="individualCtr.onStartTraining($index)">
+            <i class="ion-information-circled main-color"></i> Info {{data.$index}} </button>
+        </div>
+        <div class="col"> demo{{$index}}</div>
+        <div class="col">
+          <ion-checkbox ng-model="isChecked"></ion-checkbox>
+        </div>
+      </div>
+      <div>
+        <button class="button button-block button-positive" ng-click="trainerReportExtendedCtr.onConfirmTrainingGroup()">Confirm</button>
+      </div>
+    </ion-content>
+  </div>
+</ion-view>

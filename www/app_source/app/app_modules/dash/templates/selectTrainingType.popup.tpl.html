@@ -1,0 +1,18 @@
+<button class="popup-close" ng-click="onCloseSelectTrainingTypePopup()"> </button>
+<p class="popup-title">{{ 'SELECT_TRAINING_TYPE' | translate }}</p>
+<div class="list blue-list text-center">
+    <a class="item" ng-href="#" ng-click="trainingType = 'personal'" ng-class="{'active' : trainingType == 'personal'}">
+    	{{ 'PERSONAL_TRAINING' | translate }}
+    </a>
+    <a class="item" ng-href="#" ng-click="trainingType = 'group'" ng-class="{'active' : trainingType == 'group'}">
+    	{{ 'GROUP_TRAINING' | translate }}
+    </a>
+</div>
+<div class="row">
+    <div class="col text-left">
+        <button ng-click="onSelectTrainingType($event, trainingType)" class="button btn-left button-small button-positive">{{ 'ENTER' | translate }}</button>
+    </div>
+    <div class="col text-right">
+        <button ng-click="onCloseSelectTrainingTypePopup()" class="button btn-right button-small button-dark">{{ 'CANCEL' | translate }}</button>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<button class="popup-close" ng-click="onCloseLoginPopup()"> </button>
+<p class="popup-title">{{ 'ATHORIZATION' | translate }}</p>
+<label class="label">:{{ 'NAME' | translate }}</label>
+<input class="form-control" ng-model="model.login" type="text" placeholder="">
+<label class="label">:{{ 'PHONE' | translate }}</label>
+<input class="form-control" ng-model="model.phone" type="text" placeholder="">
+<div class="text-left">
+    <button ng-click="onSaveUserInfo($event,model)" class="button  button-positive">{{'SAVE'| translate}}</button>
+</div>

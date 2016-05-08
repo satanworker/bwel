@@ -1,0 +1,33 @@
+<ion-view view-title="Groups\Teams">
+  <ion-nav-bar class="bar bar-positive" align-title="center">
+    <ion-nav-buttons side="right">
+      <button class="button button-icon ion-navicon" menu-toggle="right"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <!--  <ion-header-bar class="bar-stable">
+    <h1 class="title">Service Provider Details</h1>
+  </ion-header-bar> -->
+  <ion-content class="trainees-dashboard">
+    <div class="row table header">
+      <div class="col">
+        <!-- Доп. инфо -->Additional info</div>
+      <div class="col">
+        <!-- Принадлежность (какая организация) -->Organization
+      </div>
+      <div class="col">
+        <!-- Количество тренировок -->Count
+      </div>
+      <div class="col">
+        <!-- Имя -->Name</div>
+    </div>
+    <div class="row table" ng-repeat="data in [1,2,3,4,5]">
+      <div class="col">
+        <button class="button" ng-click="dashboardCtr.onShowDopInfo($index)">
+          <i class="ion-info main-color"></i> Info {{data.$index}} </button>
+      </div>
+      <div class="col">BWell</div>
+      <div class="col">0\0</div>
+      <div class="col"> demo{{$index}}</div>
+    </div>
+  </ion-content>
+</ion-view>

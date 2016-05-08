@@ -1,0 +1,37 @@
+<ion-view class="trainercalendar" viewtitle='הלו"ז שלי' cache-view="false">
+  <div class="bar bar-positive bar-subheader">
+    <h1 class="title" translate="my_schedule_title">הלו"ז שלי</h1>
+  </div>
+  <!--    <ion-header-bar class="bar-stable">
+    <h1 class="title">Service Provider Details</h1>
+  </ion-header-bar> -->
+  <ion-content class="has-subheader trainees-dashboard">
+    <div class="row table header">
+    </div>
+    <div class="row" ng-repeat="practic in trainerCalendarCtr.practices">
+
+      <div class="col">
+        <h3 class="text text-right">
+          {{'schedule_Date' | translate}} : {{ practic.PracticeDateAndTime| date : "dd/MM/yyyy"}}</h3>
+        <div class="row">
+          <p class="d">
+            <span class="tranee">Client</span>:<b> {{practic.PracticeName}}</b>,
+            <span class="addres">Address</span>: {{practic.Address}},
+            <br/>
+            <span class="belongto" >Belong to</span>: ???? ,
+            <span class="PracticeLength">Practice Length</span> : {{practic.PracticeLength}} min,
+            <span class="PracticePhoneNumber">Phone Number</span> : {{practic.PracticePhoneNumber}},
+            <span class="PracticesLeft">Practices Left</span> : {{practic.PracticesLeft}},
+            <span class="PracticePackage">Practice Package
+              <!--  пакет услуг/тренировок -->
+            </span>:{{practic.PracticePackage}}
+
+          </p>
+          <assid style="padding-left: 20px;">{{practic.PracticeDateAndTime| date : "h:mma"}}</assid>
+          <div>
+            <!--       <button class="button" ng-click="dashboardCtr.onShowDopInfo($index)">
+          <i class="ion-info main-color"></i> Info {{data.$index}} </button> -->
+          </div>
+        </div>
+  </ion-content>
+</ion-view>

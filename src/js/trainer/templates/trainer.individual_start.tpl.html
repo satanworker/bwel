@@ -1,0 +1,46 @@
+<!-- <button class="popup-close" ng-click="onCloseListTraineesPopup()"> </button>
+<p class="popup-title">{{ 'SELECT_TRAINEE' | translate }}</p>
+<div ng-click="treineePopupClose({ data: 'demo'})" class="list blue-list text-center">
+    <a ng-repeat="traine in listTrainees" class="item" ng-click="onSelectTraineePerson($event,traine)">
+      {{traine.Name}}
+    </a>
+</div> -->
+
+<ion-view cache-view="false">
+  <ion-nav-bar class="bar" align-title="center">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon ion-search" ng-click="trainerIndividualCtr.onFilterClick()">
+        <!-- TODO: open filter panel-->
+      </button>
+    </ion-nav-buttons>
+    <!-- Выбери тренируемого из списка -->
+    <ion-nav-title>
+      <!-- {{ 'SELECT_TRAINEE' | translate }} -->
+      <!-- בחר מתאמן לאימון אישי -->Choose trainee</ion-nav-title>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon ion-close-round" ui-sref="^"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-content class="trainees-dashboard has-subheader">
+    <div class="row table header">
+
+      <div class="col">Additional info
+        <!-- מידע נוסף -->
+      </div>
+
+      <div class="col"> Name
+        <!-- שם מתאמן -->
+      </div>
+    </div>
+    <div class="row table" ng-repeat="trainee in trainerReportIndividualCtr.traineesList">
+      <div class="col">
+        <button class="button" ng-click="trainerReportIndividualCtr.onShowTraineeInfo(trainee.Id)">
+          <i class="ion-information-circled main-color"></i> Info</button>
+      </div>
+      <div class="col">
+        <button class="button" ng-click="trainerReportIndividualCtr.onStartTraining($event,trainee)">{{::trainee.Name }}</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<button class="popup-close" ng-click="onCloseCheckGroupPopup()"> </button>
+<p class="popup-title">{{ currentGroup.Name }} </p>
+<div class="list blue-list slider-list">
+  	<div class="slider-list__up" ng-click="changeLine('up')">
+  		{{ 'UP' | translate }}
+  	</div>
+    <a class="item" ng-click="onAddTraineInGroup($event, item, item.active); item.active = !item.active" ng-class="{'active' : item.active}" ng-repeat="item in testList | checkGroupFilter:this">
+      {{ item.Name }}
+      <span ng-class="{'checkbox-item-active' : item.active, 'checkbox-item' : !item.active}"></span>
+    </a>
+    <a class="item slider-list__new" ng-click="onOpenAddNewTraineePopup()">
+      {{ 'ADD_NEW_TRAINEE' | translate}}
+      <span class="add-item"></span>
+    </a>
+    <div class="slider-list__down" ng-click="changeLine('down')">
+		{{ 'DOWN' | translate }}
+    </div>
+</div>
+<div class="row">
+    <div class="col text-left">
+        <button ng-click="onOpenVerificationPopup()" class="button btn-left button-small button-positive">{{ 'ENTER' | translate }}</button>
+    </div>
+    <div class="col text-right">
+        <button ng-click="onCloseCheckGroupPopup()" class="button btn-right button-small button-dark">{{ 'CANCEL' | translate }}</button>
+    </div>
+</div>

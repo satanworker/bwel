@@ -1,0 +1,37 @@
+<!--   <ion-modal-view  cache-view="false">
+    <ion-header-bar>
+      <h1 class="title">My Modal title</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-scroll>
+   <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" height="200px"/>
+  </ion-scroll>
+    </ion-content>
+  </ion-modal-view>
+   -->
+<ion-view>
+  <!-- <ion-nav-bar class="bar bar-positive" align-title="center"> -->
+    <!-- <ion-nav-title class="col text-center">
+      <img src="img/logo.png" class="bar logo " alt="">
+    </ion-nav-title> -->
+  <!--   <ion-nav-buttons side="right" class="button-clear">
+      <button class="button" ng-click="personFotoCtr.goBackToList()">
+        <i class="ion-chevron-left main-color"></i>
+      </button>
+    </ion-nav-buttons> -->
+   
+  <!-- </ion-nav-bar> -->
+ <div class="bar bar-subheader" ng-switch="personFotoCtr.typeId">
+      <h2 class="title" ng-switch-when="1">Send foto </h2>
+      <h2 class="title" ng-switch-when="2">Send document</h2>
+    </div>
+  <ion-content class="has-subheader">
+    <div class="row">
+      <img src="{{personFotoCtr.currentPicture}}" alt="foto_url" height="200px">
+    </div>
+    <!-- <img ng-src="data:image/jpeg;base64,{{personFotoCtr.currentPicture}}" alt="foto_base64"/> -->
+    <div class="col text-center">
+      <button class="button button-positive" type="button" ng-click="personFotoCtr.onSendFoto()">Confirm send</button>
+    </div>
+  </ion-content>
+</ion-view>

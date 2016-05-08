@@ -1,0 +1,7 @@
+<button class="popup-close" ng-click="onCloseListTraineesPopup()"> </button>
+<p class="popup-title">{{ 'SELECT_TRAINEE' | translate }}</p>
+<div ng-click="treineePopupClose({ data: 'demo'})" class="list blue-list text-center">
+    <a ng-repeat="traine in listTrainees" class="item" ng-click="onSelectTraineePerson($event,traine)">
+      {{traine.Name}}
+    </a>
+</div>

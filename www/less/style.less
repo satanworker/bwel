@@ -1,0 +1,154 @@
+@pathWWW: './../';
+.bg(@file) {
+    background-image: url('@{pathWWW}svg/@{file}.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+@import "./popup.less";
+@import "./buttons.less";
+@import "./form.less";
+@import "./list.less";
+@import "./trainer.less";
+/* Mixins */
+/* Variables */
+
+@green: #8ac53e;
+@gray: #767676;
+@blue: #1191d0;
+/* Utility */
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.scroll-content {
+    display: table !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.scroll {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.scroll-content {
+    display: table !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.scroll {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+/* header */
+
+body,
+.ionic-body {
+    font-size: 18px;
+    color: @gray;
+}
+
+.header {
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+/* Pane */
+
+.pane {
+    background: linear-gradient(to bottom, #dbdbdb 0%, #ffffff 100%)
+}
+
+.slider-list {
+    text-align: right;
+    .item {
+        position: relative;
+        padding-right: 45px !important;
+        .checkbox-item {
+            position: absolute;
+            display: block;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #FFF;
+            right: 8px;
+            top: 50%;
+            margin-top: -13px;
+            -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
+                    box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
+        }
+        .checkbox-item-active {
+            position: absolute;
+            display: block;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: url('@{pathWWW}img/check.png') no-repeat center center #fff;
+            right: 8px;
+            top: 50%;
+            margin-top: -13px;
+            -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
+                    box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
+        }
+        .add-item {
+            position: absolute;
+            display: block;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: url('@{pathWWW}img/plus.png') no-repeat center center #fff;
+            right: 8px;
+            top: 50%;
+            margin-top: -13px;
+            -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
+                    box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
+        }
+    }
+    .slider-list__new {
+        background: #0a6592 !important;
+        color: #fff !important;
+        &:active {
+            background: darken(#0a6592, 10%) !important;
+        }
+    }
+}
+.slider-list__up {
+    width: 0;
+    margin: 0 auto 12px;
+    font-size: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 17px 11px 17px;
+    border-color: transparent transparent #767676 transparent;
+    &:active {
+        border-color: transparent transparent #006699 transparent;
+    }
+}
+.slider-list__down {
+    width: 0;
+    margin: 12px auto 0;
+    font-size: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 11px 17px 0 17px;
+    border-color: #767676 transparent transparent transparent;
+    &:active {
+        border-color: #006699 transparent transparent transparent;
+    }
+}

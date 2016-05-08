@@ -1,0 +1,34 @@
+/**
+* @see http://codepen.io/anon/pen/pjzKMZ
+* @see http://stackoverflow.com/questions/26215355/creating-a-table-in-ionic
+*/
+
+.trainees-dashboard {
+  .table {
+    .header {
+      .col {
+        /*TODO: make SKIN */
+        background-color: lightgrey;
+      }
+    }
+    .col {
+      /*TODO: make SKIN*/
+      border: solid 1px grey;
+      border-bottom-style: none;
+      border-right-style: none;
+      text-align: center;
+      &:last-child {
+        /* TODO: make SKIN*/
+        border-right: solid 1px grey;
+      }
+      .button {
+        /*TODO: delete */
+        border-radius: 8%;
+      }
+    }
+    &.row:last-child .col {
+      /*TODO: make SKIN*/
+      border-bottom: solid 1px grey;
+    }
+  }
+}

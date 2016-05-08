@@ -1,0 +1,48 @@
+<ion-view cache-view="false" view-title="" ng-click="onShowErrorMessagePopup()">
+    <ion-content>
+        <header class="header">
+            <div class="row logo">
+                <div class="col-50 col-offset-25">
+                    <img src="img/logo.png" class="img-responsive center-block">
+                </div>
+            </div>
+        </header>
+        <button ng-class="{ 'active' : isActiveTraining }" 
+                ngclick="onStartTraining($event,'demo');" 
+                ng-switch="isActiveTraining"
+
+                class="big-button center-block" >
+            <span ng-switch-when="false">{{ 'START_TRAINING' | translate }}</span>
+            <span ng-switch-when="true">{{ 'IN_TRAINING' | translate }}</span>
+        </button>
+        <div ng-if="!isActiveTraining" class="text-center main-control">
+            <button ng-click="onOpenLoginForm($event)" class="mini-btn menu-button _login">
+                <i></i>
+                <span>{{'LOGIN'|translate}}</span>
+            </button>
+            <button ng-click="onShowSelectTrainingTypePopup()" class="mini-btn menu-button _trainee">
+                <i></i>
+                <span>{{ 'SELECT_TRAINEE' | translate }}</span>
+            </button>
+            <!--<button ng-click="onOpenCheckGroupPopup()" class="mini-btn menu-button _trainee">
+                <i></i>
+                <span>{{ 'GROUP_TRAINING' | translate }}</span>
+            </button>-->
+        </div>
+        <div ng-if="isActiveTraining && currentTreenees.length == 0" class="text-center">
+            <div class="trainer-remaining"> {{ treineeInfo.workoutCount}}/<span style="color:black">{{ treineeInfo.maxWorkoutCount}}</span>
+            {{'TRAINING'|translate}}:{{currentTreene.Name}}
+            </div>
+            <br> {{'TIME_LEFT'|translate}}
+            <p class="trainer-time">{{diffTimer().minutes}}: {{diffTimer().seconds}}</p>
+        </div>
+
+        <div ng-if="isActiveTraining && currentTreenees.length != 0" class="text-center">
+            <div class="trainer-remaining">      
+            {{'TRAINING'|translate}}:{{currentGroup.Name}}
+            </div>     
+            <br> {{'TIME_LEFT'|translate}}
+            <p class="trainer-time">{{diffTimer().minutes}}: {{diffTimer().seconds}}</p>
+        </div>
+    </ion-content>
+</ion-view>

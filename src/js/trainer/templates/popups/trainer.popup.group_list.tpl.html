@@ -1,0 +1,15 @@
+<div class="bar bar-header">
+  <h1 class="title">SELECT GROUP
+    <!--{{'SELECT_GROUP'  | translate }} -->
+  </h1>
+  <button class="popup-close button ion-close-circled" ng-click="trainerCtr.onCloseGroupList()">
+  </button>
+
+</div>
+
+<!-- <p class="popup-title">SELECT GROUP{{'SELECT_GROUP'  | translate }}  </p> -->
+<div ng-click="" class="list blue-list text-center">
+  <a class="item" ng-repeat="group in trainerCtr.groupList track by $index" ng-href="#" ng-click="trainerCtr.onSelectTrainingGroup(group)">
+      {{ group.name }}
+    </a>
+</div>

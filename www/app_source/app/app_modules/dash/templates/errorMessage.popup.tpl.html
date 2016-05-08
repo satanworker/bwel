@@ -1,0 +1,11 @@
+<button class="popup-close" ng-click="onCloseErrorMessagePopup()"></button>
+<div class="row row-center error-body">
+	<div class="col">
+		<p class="popup-title text-right"></p>
+		<p class="popup-subtitle text-right"></p>
+		<p>{{ 'ERROR_MESSAGE' | translate }}</p>
+		<div class="text-center">
+		    <button ng-click="onCloseErrorMessagePopup()" class="button button-small button-positive">{{ 'OK' | translate }}</button>
+		</div>
+	</div>
+</div>
